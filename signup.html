@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindMasters - Sign Up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>MindMasters</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html"><button id="login-btn">Login</button></a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="sign-up-section">
+        <div class="sign-up-container">
+            <h2>Sign Up</h2>
+            <form id="sign-up-form">
+                <input type="email" id="sign-up-email" placeholder="Email" required>
+                <input type="password" id="sign-up-password" placeholder="Password" required>
+                <input type="password" id="confirm-password" placeholder="Confirm Password" required>
+                <a href="index.html"><button type="submit">Sign Up</button></a>
+
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 MindMasters - All Rights Reserved</p>
+    </footer>
+
+    <script>
+    document.getElementById("signup-btn").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default button behavior
+        showToast();
+    });
+
+    function showToast() {
+        var toast = document.getElementById("toast");
+        toast.classList.add("show");
+        setTimeout(function() {
+            toast.classList.remove("show");
+        }, 3000);
+    }
+    </script>
+</body>
+</html>
