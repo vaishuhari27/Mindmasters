@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindMasters - Game Based Learning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>MindMasters</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="afterquiz.html">About</a></li>
+                <li><a href="#">Games</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="signup.html"><button id="sign-up-btn">Sign Up</button></a>
+                <a href="login.html"><button id="login-btn">Login</button></a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Game-Based Learning, Made Fun</h2>
+            <p>Engage in exciting learning challenges and quiz your way to mastery!</p>
+             <a href="join.html"><button class="cta-btn">Join a Game</button></a>
+        </div>
+    </section>
+
+    <section class="quiz-feature">
+        <div class="quiz-container">
+            <h2>Ready to Create?</h2>
+            <p>Create your own quiz!</p>
+             <a href="create.html"><button class="start-quiz-btn">Create Game</button></a>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2 class="section-title">What We Offer</h2>
+        <div class="feature-container">
+            <div class="feature">
+                <h3>Engaging Games</h3>
+                <p>Interactive games that make learning fun and effective.</p>
+            </div>
+            <div class="feature">
+                <h3>Track Progress</h3>
+                <p>See how you're improving with detailed progress reports.</p>
+            </div>
+            <div class="feature">
+                <h3>Interactive Lessons</h3>
+                <p>Hands-on lessons to build new skills in an exciting way.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 MindMasters - All Rights Reserved</p>
+    </footer>
+
+    <!-- Sign-Up Modal -->
+    <div class="modal" id="sign-up-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-signup">&times;</span>
+            <h2>Sign Up</h2>
+            <form id="sign-up-form">
+                <input type="email" id="sign-up-email" placeholder="Email" required>
+                <input type="password" id="sign-up-password" placeholder="Password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-login">&times;</span>
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
