@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindMasters - Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home2.css') }}">
+</head>
+<body>
+<header>
+<div class="logo">
+<h1>MindMasters</h1>
+</div>
+<nav>
+<ul>
+<li><a href="{{ url_for('home2') }}">Home</a></li>
+<li><a href="#">About</a></li>
+</ul>
+<div class="profile-section">
+{% if session.get('user_email') %}
+<span class="user-profile">Welcome, {{ session['user_email'] }}</span>
+<a href="{{ url_for('logout') }}"><button id="logout-btn">Logout</button></a>
+{% else %}
+<a href="{{ url_for('signup') }}"><button id="sign-up-btn">Sign Up</button></a>
+<a href="{{ url_for('login') }}"><button id="login-btn">Login</button></a>
+{% endif %}
+</div>
+</nav>
+
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h2>Game-Based Learning, Made Fun</h2>
+<p>Engage in exciting learning challenges and quiz your way to mastery!</p>
+<a href="{{ url_for('join') }}"><button class="cta-btn">Join a Game</button></a>
+</div>
+</section>
+
+<section class="quiz-feature">
+<div class="quiz-container">
+<h2>Ready to Create?</h2>
+<p>Create your own quiz!</p>
+<a href="{{ url_for('create') }}"><button class="start-quiz-btn">Create Game</button></a>
+</div>
+</section>
+<section class="features">
+<h2 class="section-title">What We Offer</h2>
+<div class="feature-container">
+<div class="feature">
+<h3>Engaging Games</h3>
+<p>Interactive games that make learning fun and effective.</p>
+</div>
+<div class="feature">
+<h3>Track Progress</h3>
+<p>See how you're improving with detailed progress reports.</p>
+</div>
+<div class="feature">
+<h3>Interactive Lessons</h3>
+<p>Hands-on lessons to build new skills in an exciting way.</p>
+</div>
+</div>
+</section>
+
+<footer>
+<p>&copy; 2025 MindMasters - All Rights Reserved</p>
+</footer>
+</body>
+</html>
