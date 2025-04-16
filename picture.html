@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Add Picture-Based Questions</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/create2.css') }}">
+</head>
+<body>
+
+<header>
+<h1>MindMasters - Picture-Based Questions</h1>
+</header>
+
+<section class="game-container">
+<h2>Add Picture-Based Questions</h2>
+
+{% with messages = get_flashed_messages(with_categories=True) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="flash {{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<form action="{{ url_for('picture', room_id=room_id) }}" method="POST">
+  <label for="room_id">Room ID:</label>
+  <input type="text" id="room_id" name="room_id" value="{{ room_id }}" readonly>
+
+  <label for="question">Question:</label>
+  <input type="text" id="question" name="question" required>
+
+  <label for="image_url">Image URL:</label>
+  <input type="url" id="image_url" name="image_url" placeholder="Paste Image URL" required>
+
+  <label for="correct_answer">Correct Answer:</label>
+  <input type="text" id="correct_answer" name="correct_answer" required>
+
+  <button type="submit">Save Question</button>
+</form>
+
+<form action="{{ url_for('home2') }}" method="GET" style="margin-top: 20px;">
+  <button type="submit" class="finish-btn">Finish Creating</button>
+</form>
+</section>
+
+<footer>
+<p>&copy; 2025 MindMasters - All Rights Reserved</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindMasters - Join a Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/join.css') }}">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <h1>MindMasters</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home2') }}">Home</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <a href="{{ url_for('login') }}"><button id="login-btn">Login</button></a>
+        </div>
+    </nav>
+</header>
+
+<section class="join-section">
+    <div class="join-container">
+        <h2>Join a Game</h2>
+        <!-- Added action and method -->
+<form action="{{ url_for('join') }}" method="POST">
+    <input type="text" id="room_id" name="room_id" placeholder="Enter Room Code" required>
+    <input type="email" id="user_email" name="user_email" placeholder="Your Email" required>
+    <button type="submit">Join Game</button>
+</form>
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 MindMasters - All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

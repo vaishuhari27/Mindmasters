@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Lobby - MindMasters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lobby.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>MindMasters</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home2') }}">Home</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="lobby-container">
+    <h2>Game Lobby</h2>
+    <p><strong>Room ID:</strong> {{ room_id }}</p>
+    
+    <div class="lobby-info">
+        <h3>Game Type: {{ game_type }}</h3>
+        <h4>Created By: {{ created_by }}</h4>
+    </div>
+
+    <!-- Flash Messages for Notifications -->
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <h3>Waiting for Players...</h3>
+
+    <div class="start-game">
+        <form action="{{ url_for('start_game', room_id=room_id) }}" method="post">
+
+            <button type="submit">Start Game</button>
+        </form>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 MindMasters - All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

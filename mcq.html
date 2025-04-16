@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ - Add Questions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/create2.css') }}">
+</head>
+<body>
+<header>
+    <h1>MindMasters - MCQ Questions</h1>
+</header>
+
+<section class="game-container">
+    <h2>Add MCQ Questions</h2>
+
+    <!-- Flash Messages for Success/Error Notifications -->
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('mcq', room_id=session['room_id']) }}" method="POST">
+        <label for="room_id">Room ID:</label>
+        <input type="text" id="room_id" name="room_id" value="{{ session['room_id'] }}" readonly>
+
+        <label for="question">Question:</label>
+        <input type="text" id="question" name="question" required>
+
+        <label for="option1">Option 1:</label>
+        <input type="text" id="option1" name="option1" required>
+
+        <label for="option2">Option 2:</label>
+        <input type="text" id="option2" name="option2" required>
+
+        <label for="option3">Option 3:</label>
+        <input type="text" id="option3" name="option3" required>
+
+        <label for="option4">Option 4:</label>
+        <input type="text" id="option4" name="option4" required>
+
+        <label for="correct_answer">Correct Answer:</label>
+        <select id="correct_answer" name="correct_answer" required>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+        </select>
+
+        <button type="submit" name="action" value="add">Add Another Question</button>
+        <button type="submit" name="action" value="finish">Finish Game</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 MindMasters - All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

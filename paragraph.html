@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paragraph - Add Questions</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/create2.css') }}">
+</head>
+<body>
+
+<header>
+  <div class="logo">MindMasters</div>
+  <nav><a href="{{ url_for('home2') }}">Home</a></nav>
+</header>
+
+<main class="container">
+  <h2>Paragraph Question Creation</h2>
+  <p class="room_id"><strong>Room ID:</strong> {{ room_id }}</p>
+
+  {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <form action="{{ url_for('paragraph', room_id=room_id) }}" method="POST" class="question-form">
+    <input type="hidden" name="room_id" value="{{ room_id }}">
+
+    <label for="question">Enter Paragraph:</label>
+    <textarea id="question" name="question" rows="5" required></textarea>
+
+    <label for="correct_answer">Enter Summary or Answer:</label>
+    <textarea id="correct_answer" name="correct_answer" rows="3" required></textarea>
+
+    <button type="submit">Save Question</button>
+  </form>
+
+  <form action="{{ url_for('home2') }}" method="GET">
+    <button class="finish-btn" type="submit">Finish Creating</button>
+  </form>
+</main>
+
+<footer>
+  <p>&copy; 2025 MindMasters - All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
+

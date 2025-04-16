@@ -1,179 +1,178 @@
 /* General Reset */
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* Body & Base Styles */
 body {
-font-family: 'Poppins', sans-serif;
-background-color: #f9f9f9;
-color: #333;
-line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
 }
 
 /* Header Styles */
 header {
-background-color: #fff;
-padding: 20px 40px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-border-bottom: 2px solid #e6e6e6;
+    background-color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e6e6e6;
 }
 
 header .logo h1 {
-font-size: 2.5rem;
-color: #0077ff;
-font-weight: 600;
+    font-size: 2.5rem;
+    color: #0077ff;
+    font-weight: 600;
 }
 
 nav ul {
-display: flex;
-list-style-type: none;
-gap: 20px;
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
 }
 
 nav ul li a {
-text-decoration: none;
-color: #0077ff;
-font-weight: 500;
-font-size: 1rem;
-transition: color 0.3s ease;
+    text-decoration: none;
+    color: #0077ff;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-color: #005bb5;
+    color: #005bb5;
 }
 
 /* Hero Section */
 .hero {
-background-color: #0077ff;
-color: white;
-padding: 120px 40px;
-text-align: center;
+    background-color: #0077ff;
+    color: white;
+    padding: 120px 40px;
+    text-align: center;
 }
 
 .hero-content h2 {
-font-size: 3.5rem;
-font-weight: 600;
-margin-bottom: 20px;
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .hero-content p {
-font-size: 1.4rem;
-margin-bottom: 30px;
-opacity: 0.85;
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    opacity: 0.85;
 }
 
 .cta-btn {
-background-color: #ff8f00;
-color: white;
-padding: 15px 30px;
-font-size: 1.2rem;
-border: none;
-border-radius: 30px;
-cursor: pointer;
-transition: background-color 0.3s ease;
+    background-color: #ff8f00;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .cta-btn:hover {
-background-color: #ff6f00;
+    background-color: #ff6f00;
 }
 
 /* Quiz Feature Section */
 .quiz-feature {
-background-color: #ff5722;
-color: white;
-padding: 60px 40px;
-text-align: center;
+    background-color: #ff5722;
+    color: white;
+    padding: 60px 40px;
+    text-align: center;
 }
 
 /* Features Section */
 .features {
-background-color: #ffffff;
-padding: 80px 40px;
-text-align: center;
+    background-color: #ffffff;
+    padding: 80px 40px;
+    text-align: center;
 }
 
 .feature-container {
-display: flex;
-justify-content: space-around;
-flex-wrap: wrap;
-gap: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .feature {
-background-color: #f7f8fa;
-padding: 40px 30px;
-border-radius: 10px;
-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-text-align: center;
-transition: transform 0.3s ease;
+    background-color: #f7f8fa;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
 .feature:hover {
-transform: translateY(-10px);
+    transform: translateY(-10px);
 }
 
 /* Footer Styles */
 footer {
-background-color: #333;
-color: white;
-text-align: center;
-padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
 footer p {
-font-size: 1rem;
+    font-size: 1rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-.feature-container {
-flex-direction: column;
-align-items: center;
-}
-.feature {
-width: 80%;
-margin-bottom: 30px;
-}
+    .feature-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature {
+        width: 80%;
+        margin-bottom: 30px;
+    }
 }
 
 
 /* General Button Styling */
 button, .cta-btn, .start-quiz-btn, .auth-buttons button {
-background-color: #ff8f00;
-color: white;
-padding: 15px 30px;
-font-size: 1.2rem;
-border: none;
-border-radius: 30px;
-cursor: pointer;
-transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #ff8f00;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover, .cta-btn:hover, .start-quiz-btn:hover, .auth-buttons button:hover {
-background-color: #ff6f00;
-transform: scale(1.05);
+    background-color: #ff6f00;
+    transform: scale(1.05);
 }
 
 /* Auth Buttons in Navbar */
 .auth-buttons {
-display: flex;
-gap: 10px;
+    display: flex;
+    gap: 10px;
 }
 
 .auth-buttons button {
-padding: 10px 20px;
-font-size: 1rem;
-border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 20px;
 }
 
 /* Specific Buttons */
 .start-quiz-btn, .cta-btn {
-margin: 20px auto;
-display: inline-block;
+    margin: 20px auto;
+    display: inline-block;
 }
-

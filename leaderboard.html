@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaderboard - MindMasters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/leaderboard.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>MindMasters</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home2') }}">Home</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="leaderboard-container">
+    <h2>🏆 Leaderboard</h2>
+    <p><strong>Room ID:</strong> {{ room_id }}</p>
+
+    <table class="leaderboard-table">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in players %}
+                <tr class="{% if player.username == current_player %}highlight{% endif %}">
+                    <td>{{ loop.index }}</td>
+                    <td>{{ player.username }}</td>
+                    <td>{{ player.score }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="current-position">
+        <h3>Your Position: #{{ current_rank }}</h3>
+        <p>Well done, {{ current_player }}! 🎉</p>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 MindMasters - All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Play Paragraph - MindMasters</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/play_paragraph.css') }}">
+</head>
+<body>
+
+<header>
+  <div class="logo">MindMasters</div>
+  <nav><a href="{{ url_for('home2') }}">Home</a></nav>
+</header>
+
+<main class="container">
+  <h2>Paragraph Game</h2>
+  <p class="room_id"><strong>Room ID:</strong> {{ room_id }}</p>
+
+  {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  {% for q in questions %}
+  <div class="question-card">
+    <form action="{{ url_for('submit_paragraph_answer', question_id=q[0]) }}" method="POST">
+      <h3>{{ q[1] }}</h3>
+      <textarea name="answer" rows="4" placeholder="Enter your summary..." required></textarea>
+      <input type="hidden" name="room_id" value="{{ room_id }}">
+      <button type="submit">Submit Answer</button>
+    </form>
+  </div>
+  {% endfor %}
+
+  <form action="{{ url_for('finish_game', room_id=room_id) }}" method="GET">
+    <button class="finish-btn" type="submit">Finish Game</button>
+  </form>
+</main>
+
+<footer>
+  <p>&copy; 2025 MindMasters - All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

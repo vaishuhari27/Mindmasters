@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create a Game - MindMasters</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/create.css') }}">
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("gameForm").addEventListener("submit", function (event) {
+    let gameType = document.getElementById("game_type").value;
+    if (!gameType) {
+      alert("Please select a game type.");
+      event.preventDefault(); // Stop form submission if game type is not selected
+    }
+  });
+});
+</script>
+
+</head>
+<body>
+<header>
+  <div class="logo">
+    <h1>MindMasters</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="{{ url_for('home2') }}">Home</a></li>
+      {% if 'user_email' in session %}
+      <li><a href="{{ url_for('create') }}">Create Game</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+</header>
+
+<section class="game-creation">
+  <div class="game-container">
+    <h2>Create Your Game</h2>
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <form id="gameForm" action="{{ url_for('create') }}" method="POST">
+      <label for="created_by">Created By:</label>
+      <input type="text" id="created_by" name="created_by" placeholder="Enter your name or email" required>
+
+      <label for="game_type">Game Type:</label>
+      <select id="game_type" name="game_type" required>
+        <option value="" disabled selected>Select Game Type</option>
+        <option value="mcq">MCQ</option>
+        <option value="paragraph">Paragraph</option>
+        <option value="picture">Picture Based</option>
+        <option value="fillblanks">Fill The Blanks</option>
+      </select>
+
+      <button type="submit">Create Game</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 MindMasters - All Rights Reserved</p>
+</footer>
+</body>
+</html>

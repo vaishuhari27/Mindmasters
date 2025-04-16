@@ -1,0 +1,107 @@
+/* General reset and font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f9f9ff;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+header {
+  background-color: #5c67f2;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.room-id {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.question-box {
+  margin-bottom: 30px;
+  background-color: #eef0ff;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 5px solid #5c67f2;
+}
+
+.question-box p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: vertical;
+  font-size: 1rem;
+}
+
+button {
+  margin-top: 15px;
+  background-color: #5c67f2;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #3c49c9;
+}
+
+.finish-btn {
+  background-color: #28a745;
+  margin-top: 40px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.finish-btn:hover {
+  background-color: #218838;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  color: #aaa;
+  font-size: 0.9rem;
+}
