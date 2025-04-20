@@ -1,3 +1,4 @@
+/* Base styling */
 body {
   font-family: 'Poppins', sans-serif;
   background: #f0f2f5;
@@ -5,6 +6,7 @@ body {
   padding: 0;
 }
 
+/* Header */
 header {
   background: #4a90e2;
   padding: 1rem;
@@ -12,38 +14,84 @@ header {
   text-align: center;
 }
 
-.container {
-  padding: 2rem;
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
+/* Navigation */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+/* Container */
+.container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Room ID */
 .room_id {
   font-weight: bold;
   color: #333;
+  margin-bottom: 1rem;
 }
 
+/* Flash messages */
+.flash {
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-left: 5px solid;
+}
+
+.flash.success {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #28a745;
+}
+
+.flash.danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-color: #dc3545;
+}
+
+/* Question card */
 .question-card {
   background: white;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   margin-bottom: 2rem;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
+/* Question image */
 .question-image {
   width: 100%;
   max-width: 400px;
   margin: 1rem 0;
   border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
+/* Input field */
 input[type="text"] {
   width: 100%;
   padding: 0.5rem;
   margin: 1rem 0;
   border-radius: 5px;
   border: 1px solid #ccc;
+  font-size: 1rem;
 }
 
+/* Buttons */
 button {
   background: #4a90e2;
   color: white;
@@ -51,8 +99,19 @@ button {
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
 }
 
 button:hover {
   background: #357ab8;
+}
+
+/* Footer */
+footer {
+  background: #f0f2f5;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
 }
