@@ -1,6 +1,7 @@
 Database tables required: game_rooms,players,users,mcq_questions,paragraph_questions,picture_questions,fill_questions
 Installation: flask, bcrypt,mysql,mysql connector,python.
 Tree structure of project:
+
 ├── app.py
 ├── db_config.py
 ├── __pycache__
